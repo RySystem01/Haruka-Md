@@ -12,10 +12,10 @@ function toCommas(x) {
     return x;
 }
 
-exports.allMenu = (ucapanWaktu, pushname, mundur, upload, download, ownerName, botName, jam, tanggal, runtime, isCreator, isPremium, sender, limitCount, limit, gcount, glimit, balance, prefix) => {
+exports.allMenu = (role, ucapanWaktu, pushname, mundur, upload, download, ownerName, botName, jam, tanggal, runtime, isCreator, isPremium, sender, limitCount, limit, gcount, glimit, balance, prefix) => {
     return`${ucapanWaktu} ${pushname !== undefined ? pushname : 'Kak'}
 
-Hitung Mundur HUT RI Ke-77
+Hitung Mundur Tahun Baru
 ${mundur}
 
 *STATISTICS*
@@ -32,10 +32,12 @@ ${mundur}
 *USER INFO*
  • Name : ${pushname !== undefined ? pushname : '-'}
  • Status : ${isCreator ? 'Owner' : isPremium ? 'Premium' : 'Free'}
- • Limit : ${isCreator ? '-' : isPremium ? 'Unlimited' : getLimit(sender, limitCount, limit)}
- • Limit Game : ${isCreator ? '-' : cekGLimit(sender, gcount, glimit)}
+ • Limit : ${isCreator ? 'Unlimited' : isPremium ? 'Unlimited' : getLimit(sender, limitCount, limit)}
+ • Limit Game : ${isCreator ? 'Unlimited' : cekGLimit(sender, gcount, glimit)}
  • Balance : ${toCommas(getBalance(sender, balance))}
-
+ • Role : ${role}
+ 
+ 
 *MAIN MENU*${petik}
  • ${prefix}menu
  • ${prefix}infobot
@@ -69,6 +71,7 @@ ${mundur}
  • ${prefix}translate${petik}
 
 *ANONYMOUS CHATS*${petik}
+• ${prefix}menfess nama|62xxx|pesan
  • ${prefix}anonymous
  • ${prefix}start
  • ${prefix}next
@@ -85,15 +88,54 @@ ${mundur}
  • ${prefix}kurang
  • ${prefix}kali
  • ${prefix}bagi
+ • ${prefix}delsetdone
+ • ${prefix}changedone
+ • ${prefix}setdone
+ • ${prefix}delsetproses
+ • ${prefix}changeproses
+ • ${prefix}setproses
  • proses < reply chat >
  • done < reply chat >${petik}
+
+*RPG GAMES*${petik}
+ • ${prefix}inventory
+ • ${prefix}mining
+ • ${prefix}buy 
+ • ${prefix}sell
+ • ${prefix}heal
+ • ${prefix}hunt
+ • ${prefix}adventure
+ • ${prefix}luckyday
+ • ${prefix}killslime
+ • ${prefix}killgoblin
+ • ${prefix}killdevil
+ • ${prefix}killbehemoth
+ • ${prefix}killdemon
+ • ${prefix}killdemonking
+ • ${prefix}joinrpg
+ • ${prefix}sellikan
+ • ${prefix}sellbesi
+ • ${prefix}sellemas
+ • ${prefix}jelajah
+ • ${prefix}mancing
+ • ${prefix}jualikan
+ • ${prefix}jualcoal
+ • ${prefix}lebur
+ • ${prefix}jualstone
+ • ${prefix}jualingot
+ • ${prefix}jualkayu
+ • ${prefix}nebang
+ • ${prefix}goplanet
+ • ${prefix}jualbahankimia${petik}
 
 *DOWNLOADS MENU*${petik}
  • ${prefix}play
  • ${prefix}ytmp3
  • ${prefix}ytmp4
  • ${prefix}instagram
- • ${prefix}igstory
+ • ${prefix}igphoto
+ • ${prefix}igvideo
+ • ${prefix}igreels
  • ${prefix}tiktok
  • ${prefix}tiktoknowm
  • ${prefix}tiktokaudio
@@ -104,6 +146,12 @@ ${mundur}
  • ${prefix}afk
  • ${prefix}welcome
  • ${prefix}left
+ • ${prefix}setopen
+ • ${prefix}changesetopen
+ • ${prefix}delsetopen
+ • ${prefix}setclose
+ • ${prefix}changesetclose
+ • ${prefix}delsetclose
  • ${prefix}setwelcome
  • ${prefix}changewelcome
  • ${prefix}delsetwelcome
@@ -154,6 +202,16 @@ ${mundur}
  • ${prefix}limit
  • ${prefix}balance${petik}
 
+*STORAGE*${petik}
+ • ${prefix}addstik
+ • ${prefix}addvn
+ • ${prefix}addimg
+ • ${prefix}addvid
+ • ${prefix}liststik
+ • ${prefix}listvn
+ • ${prefix}listimg
+ • ${prefix}listvid${petik}
+ 
 *BAILEYS*${petik}
  • ${prefix}fitnah
  • ${prefix}nowa
@@ -164,12 +222,22 @@ ${mundur}
  • ${prefix}delcmd${petik}
 
 *OWNERS MENU*${petik}
+ • ${prefix}autoread
+ • ${prefix}autobio
+ • ${prefix}autorespond
+ • ${prefix}anticall
+ • ${prefix}autoblok212
  • ${prefix}join
  • ${prefix}left
  • ${prefix}self
  • ${prefix}public
+ • ${prefix}setppbot2
  • ${prefix}setppbot
  • ${prefix}broadcast
+ • ${prefix}bcimg
+ • ${prefix}bcstik
+ • ${prefix}bcvn
+ • ${prefix}bcvideo
  • ${prefix}bcsewa
  • ${prefix}addpremium
  • ${prefix}delpremium
